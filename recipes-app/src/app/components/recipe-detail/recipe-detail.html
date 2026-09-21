@@ -1,0 +1,13 @@
+@if (recipe(); as r) {
+    <h1>{{ r.name }}</h1>
+    <img [src]="r.image" width="400" />
+    <p>{{ r.cuisine }} * {{ r.difficulty }} * {{ r.prepTimeMinutes }} мин</p>
+    <h2>Ингредиенты</h2>
+    <ul>
+        @for (i of r.ingredients; track i) {
+            <li>{{ i }}</li>
+        }
+    </ul>
+} @else {
+    <p>Загрузка...</p>
+}

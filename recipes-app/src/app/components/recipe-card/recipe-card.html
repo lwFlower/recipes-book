@@ -1,0 +1,7 @@
+<a [routerLink]="['/recipe', recipe().id]">
+    <img [src]="recipe().image" width="200" />
+    <h3>{{ recipe().name }}</h3>
+</a>
+<button (click)="fav.toggle(recipe().id)">
+    {{ fav.has(recipe().id) ? '★' : '☆' }}
+</button>
