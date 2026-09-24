@@ -1,5 +1,5 @@
 import { Component, inject, input } from '@angular/core';
-import { Recipes } from '../../services/recipes';
+import { Recipes } from '../../services/recipes/recipes';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { switchMap } from 'rxjs';
 

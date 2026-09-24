@@ -1,4 +1,3 @@
-<input [formControl]="query" placeholder="Поиск рецепта...">
 @for (r of recipes(); track r.id) {
     <app-recipe-card [recipe]="r" />
 } @empty {

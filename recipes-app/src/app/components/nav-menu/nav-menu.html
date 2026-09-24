@@ -1,0 +1,5 @@
+<header class="nav-menu">
+  <a routerLink="/">Список рецептов</a>
+  <input class="search" [formControl]="search.query" placeholder="Поиск рецепта...">
+  <span class="favorites">★ {{ fav.count() }}</span>
+</header>

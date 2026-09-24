@@ -1,7 +1,7 @@
 import { Component, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Recipe } from '../../models/recipe.model';
-import { Favorites } from '../../services/favorites';
+import { Favorites } from '../../services/favorites/favorites';
 
 @Component({
   imports: [RouterLink],
