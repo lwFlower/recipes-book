@@ -1,5 +1,9 @@
-@for (r of recipes(); track r.id) {
-    <app-recipe-card [recipe]="r" />
-} @empty {
-    <p>Ничего не найдено</p>
+@if (recipes().length) {
+    <div class="grid">
+        @for (r of recipes(); track r.id) {
+            <app-recipe-card [recipe]="r" />
+        }
+    </div>
+} @else {
+    <p class="empty">Ничего не найдено</p>
 }

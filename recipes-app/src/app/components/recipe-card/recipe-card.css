@@ -11,6 +11,10 @@
     z-index: 1;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  :host, :host(:hover) { transition: none; transform: none; }
+}
+
 .recipe-link-container {
     position: relative;
     padding: 10px;

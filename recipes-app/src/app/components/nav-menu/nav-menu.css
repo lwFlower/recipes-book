@@ -1,39 +1,44 @@
 
+:host {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
 .nav-menu {
     display: flex;
     align-items: center;
     justify-content: space-around;
     gap: 16px;
 
-    padding: 12px 24px;
+    padding: 12px 8px;
     background: white;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
-    position: sticky;
-    top: 0;
-    z-index: 10;
-
     width: 40vw;
+    margin-inline: auto
 }
 
 .nav-menu a {
-  color: #333;
-  text-decoration: none;
-  color: rgb(90, 0, 0);
-  font-weight: 600;
-  
-  padding: 8px 12px;
-  border-radius: 8px;
-  background-color: transparent;
-  transition: background-color .15s ease;
-
+    color: #333;
+    text-decoration: none;
+    color: rgb(90, 0, 0);
+    font-weight: 600;
+    
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: box-shadow .4s ease;
+    cursor: pointer;
+    text-align: center;
 }
 
 .nav-menu a:hover {
     background-color: rgba(245, 245, 245, 0.147);
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0px 15px rgba(81, 51, 51, 0.31);
 }
 
 .favorites { 
@@ -45,8 +50,8 @@
     padding: 8px;
     width: 60%;
 
-    font-size: 14px;
+    font-size: medium;
 
     border-radius: 8px;
-    border: 1px solid rgb(92, 21, 21);
+    border: 1px solid rgb(222, 222, 222);
 }
