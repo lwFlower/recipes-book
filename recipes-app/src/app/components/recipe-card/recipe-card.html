@@ -1,7 +1,16 @@
-<a [routerLink]="['/recipe', recipe().id]">
-    <img [src]="recipe().image" width="200" />
-    <h3>{{ recipe().name }}</h3>
-</a>
-<button (click)="fav.toggle(recipe().id)">
+<div class="recipe-link-container">
+    <a class="recipe-link" [routerLink]="['/recipe', recipe().id]">
+        <img [src]="recipe().image" />
+        <h3>{{ recipe().name }}</h3>
+    </a>
+</div>
+
+<button 
+    class="fav-button" [class.is-fav]="fav.has(recipe().id)"
+    [class.pulse]="pulsing()" 
+    (click)="toggle()"
+    (animationend)="pulsing.set(false)"
+    [attr.aria-label]="fav.has(recipe().id) ? 'Remove from favorites' : 'Add to favorites' ";
+>
     {{ fav.has(recipe().id) ? '★' : '☆' }}
 </button>
