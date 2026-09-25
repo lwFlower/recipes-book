@@ -1,13 +1,37 @@
 @if (recipe(); as r) {
-    <h1>{{ r.name }}</h1>
-    <img [src]="r.image" width="400" />
-    <p>{{ r.cuisine }} * {{ r.difficulty }} * {{ r.prepTimeMinutes }} мин</p>
-    <h2>Ингредиенты</h2>
-    <ul>
-        @for (i of r.ingredients; track i) {
+  <article class="recipe">
+    <div class="hero">
+      <img [src]="r.image" [alt]="r.name" />
+      <div class="hero__overlay">
+        <h1>{{ r.name }}</h1>
+        <div class="tags">
+          <span class="tag">{{ r.cuisine }}</span>
+          <span class="tag">{{ r.difficulty }}</span>
+          <span class="tag">{{ r.prepTimeMinutes }} min</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="body">
+      <aside class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+          @for (i of r.ingredients; track i) {
             <li>{{ i }}</li>
-        }
-    </ul>
+          }
+        </ul>
+      </aside>
+
+      <section class="steps">
+        <h2>Instructions</h2>
+        <ol>
+          @for (s of r.instructions; track s; let idx = $index) {
+            <li><span class="step-num">{{ idx + 1 }}</span>{{ s }}</li>
+          }
+        </ol>
+      </section>
+    </div>
+  </article>
 } @else {
-    <p>Загрузка...</p>
+  <p class="loading">Загрузка...</p>
 }

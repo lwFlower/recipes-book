@@ -2,11 +2,11 @@ import { Component, inject } from '@angular/core';
 import { Search } from '../../services/search/search';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Favorites } from '../../services/favorites/favorites';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   selector: 'app-nav-menu',
   styleUrl: './nav-menu.css',
   templateUrl: './nav-menu.html',

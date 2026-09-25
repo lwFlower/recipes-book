@@ -1,0 +1,129 @@
+:host {
+  display: block;
+  width: min(100% - 2rem, 70rem);
+  margin-inline: auto;
+  padding: 24px 0 48px;
+
+  --accent: #8a1a1a;
+  --soft: #fdf6f0;
+}
+
+.recipe {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .08);
+}
+
+.hero { position: relative; }
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: clamp(240px, 38vw, 420px);
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 32px 28px 24px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, .75));
+  color: white;
+}
+
+.hero__overlay h1 {
+  margin: 0 0 12px;
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  line-height: 1.15;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, .4);
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tag {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .22);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, .35);
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 2fr;
+  gap: 32px;
+  padding: 32px 28px;
+  align-items: start;
+}
+
+.body h2 {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent);
+}
+
+.ingredients {
+  background: var(--soft);
+  border-radius: 12px;
+  padding: 20px;
+  position: sticky;
+  top: 90px;
+}
+
+.ingredients ul { margin: 0; padding: 0; list-style: none; }
+
+.ingredients li {
+  padding: 8px 0 8px 26px;
+  position: relative;
+  border-bottom: 1px dashed rgba(0, 0, 0, .1);
+  font-size: .95rem;
+}
+
+.ingredients li:last-child { border-bottom: none; }
+
+.ingredients li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.steps ol { margin: 0; padding: 0; list-style: none; counter-reset: step; }
+
+.steps li {
+  display: flex;
+  gap: 14px;
+  padding: 0 0 20px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.step-num {
+  flex: 0 0 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .body { grid-template-columns: 1fr; gap: 24px; padding: 24px 18px; }
+  .ingredients { position: static; }
+}
+
+.loading {
+  text-align: center;
+  padding: 64px 0;
+  color: #888;
+  font-size: 18px;
+}
