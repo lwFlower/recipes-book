@@ -1,0 +1,44 @@
+:host {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    --accent: #8a1a1a;
+}
+
+.go-back {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    left: 20px;
+    top: 15px;
+
+    padding: 8px 16px 8px 8px;
+    background: #fdf6f0c2;
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--accent);
+    border-radius: 50px;
+
+    width: fit-content;
+
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.go-back svg {
+    display: block;
+    color: var(--accent);
+}
+
+
+.go-back p {
+    font-size: medium;
+    font-weight: bold;
+    color: var(--accent);
+    margin: 0;
+}
